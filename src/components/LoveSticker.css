@@ -1,0 +1,268 @@
+.love-sticker {
+  position: relative;
+  width: clamp(124px, 24vw, 172px);
+  height: clamp(106px, 18vw, 136px);
+  margin: 0 auto 22px;
+  display: grid;
+  place-items: center;
+  animation: sticker-bob 2.8s ease-in-out infinite;
+}
+
+.love-sticker--celebration {
+  margin-bottom: 26px;
+}
+
+.sticker-glow {
+  position: absolute;
+  inset: 22% 4% 4%;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 244, 196, 0.9), rgba(221, 249, 245, 0.9));
+  box-shadow: 0 18px 45px rgba(239, 71, 111, 0.18);
+  transform: rotate(-3deg);
+}
+
+.sticker-envelope {
+  position: relative;
+  width: 88px;
+  height: 62px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fffaf3, #ffd6df);
+  box-shadow:
+    inset 0 -1px 0 rgba(239, 71, 111, 0.16),
+    0 14px 26px rgba(31, 41, 55, 0.14);
+  overflow: hidden;
+}
+
+.sticker-envelope::before,
+.sticker-envelope::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 244, 246, 0.84);
+}
+
+.sticker-envelope::before {
+  left: -26px;
+  transform: rotate(45deg);
+}
+
+.sticker-envelope::after {
+  right: -26px;
+  transform: rotate(-45deg);
+}
+
+.sticker-flap {
+  position: absolute;
+  top: -35px;
+  left: 12px;
+  z-index: 2;
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  background: #fff1f4;
+  transform: rotate(45deg);
+  transform-origin: bottom center;
+  animation: flap-wave 2.8s ease-in-out infinite;
+}
+
+.sticker-note {
+  position: absolute;
+  left: 18px;
+  top: 15px;
+  z-index: 1;
+  width: 52px;
+  height: 38px;
+  border-radius: 7px;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(31, 41, 55, 0.1);
+  animation: note-pop 2.8s ease-in-out infinite;
+}
+
+.sticker-note-heart,
+.sticker-heart {
+  position: absolute;
+  aspect-ratio: 1;
+  background: #ef476f;
+  border-radius: 7px 7px 2px 7px;
+  rotate: 45deg;
+}
+
+.sticker-note-heart {
+  left: 20px;
+  top: 11px;
+  width: 12px;
+}
+
+.sticker-note-heart::before,
+.sticker-note-heart::after,
+.sticker-heart::before,
+.sticker-heart::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.sticker-note-heart::before,
+.sticker-heart::before {
+  translate: -45% 0;
+}
+
+.sticker-note-heart::after,
+.sticker-heart::after {
+  translate: 0 -45%;
+}
+
+.sticker-heart {
+  width: 18px;
+  animation: heart-float 2.8s ease-in-out infinite;
+}
+
+.sticker-heart-one {
+  top: 14px;
+  right: 16px;
+}
+
+.sticker-heart-two {
+  left: 18px;
+  top: 32px;
+  width: 14px;
+  background: #14b8a6;
+  animation-delay: 220ms;
+}
+
+.sticker-heart-three {
+  right: 38px;
+  bottom: 18px;
+  width: 12px;
+  background: #f59e0b;
+  animation-delay: 420ms;
+}
+
+.love-sticker--celebration .sticker-heart-one {
+  top: 8px;
+  right: 10px;
+  width: 22px;
+}
+
+.love-sticker--celebration .sticker-heart-two {
+  left: 12px;
+  top: 18px;
+  width: 18px;
+}
+
+.love-sticker--celebration .sticker-heart-three {
+  right: 42px;
+  bottom: 8px;
+  width: 16px;
+}
+
+.sticker-spark {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  transform: rotate(45deg);
+  animation: sparkle 2.2s ease-in-out infinite;
+}
+
+.sticker-spark::before,
+.sticker-spark::after {
+  position: absolute;
+  content: "";
+  border-radius: 999px;
+  background: #f59e0b;
+}
+
+.sticker-spark::before {
+  left: 6px;
+  top: 0;
+  width: 3px;
+  height: 14px;
+}
+
+.sticker-spark::after {
+  left: 0;
+  top: 6px;
+  width: 14px;
+  height: 3px;
+}
+
+.sticker-spark-one {
+  left: 6px;
+  bottom: 20px;
+}
+
+.sticker-spark-two {
+  top: 18px;
+  right: 34px;
+  animation-delay: 520ms;
+}
+
+@keyframes sticker-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes flap-wave {
+  0%,
+  100% {
+    transform: rotate(45deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(45deg) translateY(-5px);
+  }
+}
+
+@keyframes note-pop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes heart-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.95;
+  }
+
+  50% {
+    transform: translateY(-12px) scale(1.12);
+    opacity: 1;
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: rotate(45deg) scale(0.72);
+  }
+
+  50% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+@media (max-width: 520px) {
+  .love-sticker {
+    margin-bottom: 18px;
+  }
+}

@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { LoveSticker } from "./components/LoveSticker";
 import "./App.css";
 
 type ButtonPosition = {
@@ -103,6 +104,7 @@ function App() {
       <section className="proposal" aria-live="polite">
         {accepted ? (
           <div className="answer">
+            <LoveSticker variant="celebration" />
             <p className="eyebrow">Deal sealed</p>
             <h1>I knew you would choose YES.</h1>
             <p className="subtitle">No take-backs from now on.</p>
@@ -112,6 +114,7 @@ function App() {
           </div>
         ) : (
           <>
+            <LoveSticker variant="question" />
             <p className="eyebrow">One tiny question</p>
             <h1>Do you love me?</h1>
             <p className="subtitle">
