@@ -1,268 +1,194 @@
 .love-sticker {
-  position: relative;
-  width: clamp(124px, 24vw, 172px);
-  height: clamp(106px, 18vw, 136px);
+  width: clamp(176px, 34vw, 248px);
+  height: clamp(142px, 28vw, 200px);
   margin: 0 auto 22px;
-  display: grid;
-  place-items: center;
   animation: sticker-bob 2.8s ease-in-out infinite;
 }
 
 .love-sticker--celebration {
-  margin-bottom: 26px;
+  margin-bottom: 18px;
 }
 
-.sticker-glow {
-  position: absolute;
-  inset: 22% 4% 4%;
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgba(255, 244, 196, 0.9), rgba(221, 249, 245, 0.9));
-  box-shadow: 0 18px 45px rgba(239, 71, 111, 0.18);
-  transform: rotate(-3deg);
-}
-
-.sticker-envelope {
-  position: relative;
-  width: 88px;
-  height: 62px;
-  border-radius: 8px;
-  background: linear-gradient(180deg, #fffaf3, #ffd6df);
-  box-shadow:
-    inset 0 -1px 0 rgba(239, 71, 111, 0.16),
-    0 14px 26px rgba(31, 41, 55, 0.14);
-  overflow: hidden;
-}
-
-.sticker-envelope::before,
-.sticker-envelope::after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  width: 64px;
-  height: 64px;
-  background: rgba(255, 244, 246, 0.84);
-}
-
-.sticker-envelope::before {
-  left: -26px;
-  transform: rotate(45deg);
-}
-
-.sticker-envelope::after {
-  right: -26px;
-  transform: rotate(-45deg);
-}
-
-.sticker-flap {
-  position: absolute;
-  top: -35px;
-  left: 12px;
-  z-index: 2;
-  width: 64px;
-  height: 64px;
-  border-radius: 8px;
-  background: #fff1f4;
-  transform: rotate(45deg);
-  transform-origin: bottom center;
-  animation: flap-wave 2.8s ease-in-out infinite;
-}
-
-.sticker-note {
-  position: absolute;
-  left: 18px;
-  top: 15px;
-  z-index: 1;
-  width: 52px;
-  height: 38px;
-  border-radius: 7px;
-  background: #ffffff;
-  box-shadow: 0 6px 16px rgba(31, 41, 55, 0.1);
-  animation: note-pop 2.8s ease-in-out infinite;
-}
-
-.sticker-note-heart,
-.sticker-heart {
-  position: absolute;
-  aspect-ratio: 1;
-  background: #ef476f;
-  border-radius: 7px 7px 2px 7px;
-  rotate: 45deg;
-}
-
-.sticker-note-heart {
-  left: 20px;
-  top: 11px;
-  width: 12px;
-}
-
-.sticker-note-heart::before,
-.sticker-note-heart::after,
-.sticker-heart::before,
-.sticker-heart::after {
-  position: absolute;
-  content: "";
+.sticker-art {
+  display: block;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  background: inherit;
+  overflow: visible;
+  filter: drop-shadow(0 18px 28px rgba(239, 71, 111, 0.18));
 }
 
-.sticker-note-heart::before,
-.sticker-heart::before {
-  translate: -45% 0;
+.sticker-card {
+  fill: #fffefe;
+  stroke: rgba(239, 71, 111, 0.08);
+  stroke-width: 2;
 }
 
-.sticker-note-heart::after,
-.sticker-heart::after {
-  translate: 0 -45%;
+.character {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: character-sway 3s ease-in-out infinite;
 }
 
-.sticker-heart {
-  width: 18px;
-  animation: heart-float 2.8s ease-in-out infinite;
+.question-right,
+.celebration-right {
+  animation-delay: 260ms;
 }
 
-.sticker-heart-one {
-  top: 14px;
-  right: 16px;
+.character-warm .body,
+.character-warm .ear {
+  fill: #c98752;
 }
 
-.sticker-heart-two {
-  left: 18px;
-  top: 32px;
-  width: 14px;
-  background: #14b8a6;
-  animation-delay: 220ms;
+.character-warm .belly {
+  fill: #efbb82;
 }
 
-.sticker-heart-three {
-  right: 38px;
-  bottom: 18px;
-  width: 12px;
-  background: #f59e0b;
-  animation-delay: 420ms;
+.character-soft .body {
+  fill: #fffaf7;
+  stroke: #2d1f1f;
+  stroke-width: 4;
 }
 
-.love-sticker--celebration .sticker-heart-one {
-  top: 8px;
-  right: 10px;
-  width: 22px;
+.character-warm .body,
+.character-warm .ear {
+  stroke: #2d1f1f;
+  stroke-width: 4;
+  stroke-linejoin: round;
 }
 
-.love-sticker--celebration .sticker-heart-two {
-  left: 12px;
-  top: 18px;
-  width: 18px;
+.eye {
+  fill: #2d1f1f;
 }
 
-.love-sticker--celebration .sticker-heart-three {
-  right: 42px;
-  bottom: 8px;
-  width: 16px;
+.mouth,
+.happy-mouth {
+  fill: none;
+  stroke: #2d1f1f;
+  stroke-width: 4;
+  stroke-linecap: round;
 }
 
-.sticker-spark {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  transform: rotate(45deg);
-  animation: sparkle 2.2s ease-in-out infinite;
+.blush {
+  fill: rgba(255, 145, 155, 0.48);
 }
 
-.sticker-spark::before,
-.sticker-spark::after {
-  position: absolute;
-  content: "";
-  border-radius: 999px;
-  background: #f59e0b;
+.arm,
+.hug-arm {
+  fill: none;
+  stroke: #2d1f1f;
+  stroke-width: 7;
+  stroke-linecap: round;
 }
 
-.sticker-spark::before {
-  left: 6px;
-  top: 0;
-  width: 3px;
-  height: 14px;
+.question-left .arm,
+.celebration-right .hug-arm {
+  stroke: #c98752;
 }
 
-.sticker-spark::after {
-  left: 0;
-  top: 6px;
-  width: 14px;
-  height: 3px;
+.question-right .pat-arm,
+.celebration-left .hug-arm {
+  stroke: #fffaf7;
 }
 
-.sticker-spark-one {
-  left: 6px;
-  bottom: 20px;
+.tiny-flower {
+  fill: #ef476f;
+  stroke: #2d1f1f;
+  stroke-width: 3;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: flower-wiggle 1.8s ease-in-out infinite;
 }
 
-.sticker-spark-two {
-  top: 18px;
-  right: 34px;
-  animation-delay: 520ms;
+.mini-heart {
+  fill: #ef476f;
+  stroke: #c3375b;
+  stroke-width: 3;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: heart-pop 2.4s ease-in-out infinite;
+}
+
+.mini-heart-two {
+  animation-delay: 250ms;
+}
+
+.mini-heart-three {
+  animation-delay: 460ms;
+}
+
+.love-sticker--question .mini-heart-three {
+  opacity: 0;
+}
+
+.question-mark {
+  fill: #2d1f1f;
+  font-family: ui-rounded, "Segoe UI", system-ui, sans-serif;
+  font-size: 34px;
+  font-weight: 900;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: question-wobble 2.2s ease-in-out infinite;
 }
 
 @keyframes sticker-bob {
   0%,
   100% {
-    transform: translateY(0) rotate(-1deg);
+    transform: translateY(0) rotate(-0.5deg);
   }
 
   50% {
-    transform: translateY(-8px) rotate(1deg);
+    transform: translateY(-7px) rotate(0.5deg);
   }
 }
 
-@keyframes flap-wave {
+@keyframes character-sway {
   0%,
   100% {
-    transform: rotate(45deg) translateY(0);
+    transform: rotate(-1deg);
   }
 
   50% {
-    transform: rotate(45deg) translateY(-5px);
+    transform: rotate(1.5deg) translateY(-3px);
   }
 }
 
-@keyframes note-pop {
+@keyframes heart-pop {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.9);
+    opacity: 0.82;
   }
 
   50% {
-    transform: translateY(-9px);
-  }
-}
-
-@keyframes heart-float {
-  0%,
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.95;
-  }
-
-  50% {
-    transform: translateY(-12px) scale(1.12);
+    transform: translateY(-9px) scale(1.08);
     opacity: 1;
   }
 }
 
-@keyframes sparkle {
+@keyframes question-wobble {
   0%,
   100% {
-    opacity: 0.35;
-    transform: rotate(45deg) scale(0.72);
+    transform: rotate(-8deg) translateY(0);
   }
 
   50% {
-    opacity: 1;
-    transform: rotate(45deg) scale(1);
+    transform: rotate(8deg) translateY(-4px);
+  }
+}
+
+@keyframes flower-wiggle {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(8deg) scale(1.04);
   }
 }
 
 @media (max-width: 520px) {
   .love-sticker {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 }

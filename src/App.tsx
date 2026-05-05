@@ -106,8 +106,8 @@ function App() {
           <div className="answer">
             <LoveSticker variant="celebration" />
             <p className="eyebrow">Deal sealed</p>
-            <h1>I knew you would choose YES.</h1>
-            <p className="subtitle">No take-backs from now on.</p>
+            <h1>I knew it!</h1>
+            <p className="subtitle">You picked the cutest answer.</p>
             <button className="reset-button" type="button" onClick={resetGame}>
               Play again
             </button>
