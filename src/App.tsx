@@ -12,6 +12,8 @@ const noLabels = [
   "Nghĩ lại đi",
   "Không được đâu",
   "Bắt anh đi",
+  "Đố em bắt được",
+  "Lêu lêu",
 ];
 
 function App() {
