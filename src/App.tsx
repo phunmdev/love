@@ -81,12 +81,6 @@ function App() {
     setMoveCount((count) => count + 1);
   };
 
-  const resetGame = () => {
-    setAccepted(false);
-    setMoveCount(0);
-    setNoPosition(null);
-  };
-
   const noButtonText = noLabels[Math.min(moveCount, noLabels.length - 1)];
 
   return (
@@ -104,9 +98,6 @@ function App() {
             <p className="eyebrow">Chốt đơn</p>
             <h1>Anh biết em sẽ chọn YES mà.</h1>
             <p className="subtitle">Từ giờ không được đổi ý đâu nha.</p>
-            <button className="reset-button" type="button" onClick={resetGame}>
-              Chơi lại
-            </button>
           </div>
         ) : (
           <>
