@@ -1,8 +1,8 @@
 .love-sticker {
-  width: clamp(176px, 34vw, 248px);
-  height: clamp(142px, 28vw, 200px);
-  margin: 0 auto 22px;
-  animation: sticker-bob 2.8s ease-in-out infinite;
+  width: clamp(210px, 36vw, 290px);
+  height: clamp(166px, 28vw, 226px);
+  margin: 0 auto 24px;
+  animation: sticker-hover 3s ease-in-out infinite;
 }
 
 .love-sticker--celebration {
@@ -14,181 +14,150 @@
   width: 100%;
   height: 100%;
   overflow: visible;
-  filter: drop-shadow(0 18px 28px rgba(239, 71, 111, 0.18));
+  filter: drop-shadow(0 22px 32px rgba(239, 71, 111, 0.2));
 }
 
 .sticker-card {
   fill: #fffefe;
-  stroke: rgba(239, 71, 111, 0.08);
+  stroke: rgba(239, 71, 111, 0.13);
   stroke-width: 2;
 }
 
-.character {
+.character-bob {
   transform-box: fill-box;
   transform-origin: center bottom;
-  animation: character-sway 3s ease-in-out infinite;
+  animation: character-bob 3.2s ease-in-out infinite;
 }
 
-.question-right,
-.celebration-right {
-  animation-delay: 260ms;
+.character-bob-right {
+  animation-delay: 180ms;
 }
 
-.character-warm .body,
-.character-warm .ear {
-  fill: #c98752;
+.sticker-float {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: heart-float 2.4s ease-in-out infinite;
 }
 
-.character-warm .belly {
-  fill: #efbb82;
+.sticker-float-left {
+  animation-delay: 120ms;
 }
 
-.character-soft .body {
-  fill: #fffaf7;
-  stroke: #2d1f1f;
-  stroke-width: 4;
-}
-
-.character-warm .body,
-.character-warm .ear {
-  stroke: #2d1f1f;
-  stroke-width: 4;
+.bean-character,
+.bear-ear {
+  fill: #c8844c;
+  stroke: #2b1d1d;
   stroke-linejoin: round;
+  stroke-width: 5;
 }
 
-.eye {
-  fill: #2d1f1f;
+.white-character {
+  fill: #fffdfa;
+  stroke: #2b1d1d;
+  stroke-width: 5;
 }
 
-.mouth,
+.face-dot {
+  fill: #2b1d1d;
+}
+
+.cute-mouth,
 .happy-mouth {
   fill: none;
-  stroke: #2d1f1f;
+  stroke: #2b1d1d;
+  stroke-linecap: round;
   stroke-width: 4;
-  stroke-linecap: round;
 }
 
-.blush {
-  fill: rgba(255, 145, 155, 0.48);
+.cheek {
+  fill: rgba(255, 137, 151, 0.48);
 }
 
-.arm,
-.hug-arm {
-  fill: none;
-  stroke: #2d1f1f;
-  stroke-width: 7;
-  stroke-linecap: round;
-}
-
-.question-left .arm,
-.celebration-right .hug-arm {
-  stroke: #c98752;
-}
-
-.question-right .pat-arm,
-.celebration-left .hug-arm {
-  stroke: #fffaf7;
-}
-
-.tiny-flower {
+.sticker-heart {
   fill: #ef476f;
-  stroke: #2d1f1f;
+  stroke: #d63d66;
+  stroke-linejoin: round;
   stroke-width: 3;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: flower-wiggle 1.8s ease-in-out infinite;
 }
 
-.mini-heart {
-  fill: #ef476f;
-  stroke: #c3375b;
-  stroke-width: 3;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: heart-pop 2.4s ease-in-out infinite;
-}
-
-.mini-heart-two {
-  animation-delay: 250ms;
-}
-
-.mini-heart-three {
-  animation-delay: 460ms;
-}
-
-.love-sticker--question .mini-heart-three {
-  opacity: 0;
-}
-
-.question-mark {
-  fill: #2d1f1f;
+.cute-question {
+  fill: #2b1d1d;
   font-family: ui-rounded, "Segoe UI", system-ui, sans-serif;
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 900;
   transform-box: fill-box;
   transform-origin: center;
-  animation: question-wobble 2.2s ease-in-out infinite;
+  animation: question-pop 1.8s ease-in-out infinite;
 }
 
-@keyframes sticker-bob {
+.white-arm-outline,
+.bear-arm-outline {
+  fill: none;
+  stroke: #2b1d1d;
+  stroke-linecap: round;
+  stroke-width: 12;
+}
+
+.white-arm {
+  fill: none;
+  stroke: #fffdfa;
+  stroke-linecap: round;
+  stroke-width: 8;
+}
+
+.bear-arm {
+  fill: none;
+  stroke: #c8844c;
+  stroke-linecap: round;
+  stroke-width: 8;
+}
+
+@keyframes sticker-hover {
   0%,
   100% {
-    transform: translateY(0) rotate(-0.5deg);
+    transform: translateY(0);
   }
 
   50% {
-    transform: translateY(-7px) rotate(0.5deg);
+    transform: translateY(-8px);
   }
 }
 
-@keyframes character-sway {
+@keyframes character-bob {
   0%,
   100% {
-    transform: rotate(-1deg);
+    transform: translateY(0) rotate(-1deg);
   }
 
   50% {
-    transform: rotate(1.5deg) translateY(-3px);
+    transform: translateY(-4px) rotate(1deg);
   }
 }
 
-@keyframes heart-pop {
+@keyframes heart-float {
   0%,
   100% {
-    transform: translateY(0) scale(0.9);
-    opacity: 0.82;
+    transform: translateY(0) scale(0.96);
   }
 
   50% {
-    transform: translateY(-9px) scale(1.08);
-    opacity: 1;
+    transform: translateY(-8px) scale(1.05);
   }
 }
 
-@keyframes question-wobble {
+@keyframes question-pop {
   0%,
   100% {
     transform: rotate(-8deg) translateY(0);
   }
 
   50% {
-    transform: rotate(8deg) translateY(-4px);
-  }
-}
-
-@keyframes flower-wiggle {
-  0%,
-  100% {
-    transform: rotate(-5deg);
-  }
-
-  50% {
-    transform: rotate(8deg) scale(1.04);
+    transform: rotate(8deg) translateY(-5px);
   }
 }
 
 @media (max-width: 520px) {
   .love-sticker {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 }

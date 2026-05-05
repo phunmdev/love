@@ -7,103 +7,101 @@ type LoveStickerProps = {
 export function LoveSticker({ variant }: LoveStickerProps) {
   return (
     <div className={`love-sticker love-sticker--${variant}`} aria-hidden="true">
-      <svg className="sticker-art" viewBox="0 0 260 210">
-        <rect className="sticker-card" x="26" y="18" width="208" height="158" rx="18" />
-
-        <g className="sticker-hearts">
-          <path
-            className="mini-heart mini-heart-one"
-            d="M131 45c-6-7-18-3-18 7 0 12 18 21 18 21s18-9 18-21c0-10-12-14-18-7z"
-          />
-          <path
-            className="mini-heart mini-heart-two"
-            d="M170 58c-4-5-12-2-12 5 0 8 12 14 12 14s12-6 12-14c0-7-8-10-12-5z"
-          />
-          <path
-            className="mini-heart mini-heart-three"
-            d="M94 56c-4-5-12-2-12 5 0 8 12 14 12 14s12-6 12-14c0-7-8-10-12-5z"
-          />
-        </g>
-
-        {variant === "question" ? <QuestionScene /> : <CelebrationScene />}
+      <svg className="sticker-art" viewBox="0 0 320 250">
+        <rect className="sticker-card" x="56" y="22" width="208" height="162" rx="18" />
+        {variant === "question" ? <QuestionSticker /> : <CelebrationSticker />}
       </svg>
     </div>
   );
 }
 
-function QuestionScene() {
+function QuestionSticker() {
   return (
     <>
-      <text className="question-mark" x="162" y="59">
-        ?
-      </text>
-
-      <g transform="translate(82 70)">
-        <g className="character character-warm question-left">
-          <path className="ear ear-left" d="M11 20c-11-5-18 7-12 17 8-1 13-6 12-17z" />
-          <path className="ear ear-right" d="M69 20c11-5 18 7 12 17-8-1-13-6-12-17z" />
-          <path
-            className="body"
-            d="M40 9c29 0 48 24 48 56 0 36-20 61-48 61S-8 101-8 65C-8 33 11 9 40 9z"
-          />
-          <path className="belly" d="M24 75c0-13 8-22 16-22s16 9 16 22-7 24-16 24-16-11-16-24z" />
-          <circle className="eye" cx="25" cy="47" r="4" />
-          <circle className="eye" cx="55" cy="47" r="4" />
-          <path className="mouth" d="M35 61c4 4 6 4 10 0" />
-          <circle className="blush" cx="13" cy="57" r="7" />
-          <circle className="blush" cx="67" cy="57" r="7" />
-          <path className="arm arm-left" d="M5 78c-14 7-13 26 3 26" />
-          <path className="arm arm-right holding-arm" d="M73 76c20 5 23 23 10 31" />
-          <path className="tiny-flower" d="M88 82c8-10 16-1 7 6 10 3 5 15-5 9-2 11-15 7-11-4-11 1-12-13 0-12-5-10 7-16 9 1z" />
-        </g>
+      <g className="sticker-float sticker-float-left">
+        <Heart x={103} y={54} size={18} />
+        <Heart x={138} y={39} size={29} />
+        <text className="cute-question" x="210" y="61">
+          ?
+        </text>
       </g>
 
-      <g transform="translate(132 78)">
-        <g className="character character-soft question-right">
-          <path className="body" d="M40 3c27 0 47 23 47 56 0 35-19 60-47 60S-7 94-7 59C-7 26 13 3 40 3z" />
-          <circle className="eye" cx="26" cy="44" r="4" />
-          <circle className="eye" cx="56" cy="44" r="4" />
-          <path className="mouth" d="M36 58c3 3 5 3 8 0" />
-          <circle className="blush" cx="14" cy="54" r="7" />
-          <circle className="blush" cx="68" cy="54" r="7" />
-          <path className="arm pat-arm" d="M8 69c-19 4-28 20-16 30" />
-        </g>
+      <g className="character-bob character-bob-left">
+        <circle className="bear-ear" cx="122" cy="88" r="15" />
+        <circle className="bear-ear" cx="168" cy="91" r="15" />
+        <path
+          className="bean-character"
+          d="M133 73c-32 4-50 31-47 67 3 37 30 61 62 55 32-5 51-35 46-74-5-37-29-52-61-48z"
+        />
+        <circle className="face-dot" cx="129" cy="126" r="4.5" />
+        <circle className="face-dot" cx="158" cy="126" r="4.5" />
+        <path className="cute-mouth" d="M139 140c4 4 8 4 12 0" />
+        <circle className="cheek cheek-left" cx="113" cy="135" r="9" />
+        <circle className="cheek cheek-right" cx="172" cy="137" r="9" />
+      </g>
+
+      <g className="character-bob character-bob-right">
+        <ellipse className="white-character" cx="181" cy="133" rx="48" ry="57" />
+        <circle className="face-dot" cx="166" cy="128" r="4.5" />
+        <circle className="face-dot" cx="196" cy="128" r="4.5" />
+        <path className="cute-mouth" d="M176 143c4 4 8 4 12 0" />
+        <circle className="cheek" cx="151" cy="139" r="9" />
+        <circle className="cheek" cx="211" cy="140" r="9" />
       </g>
     </>
   );
 }
 
-function CelebrationScene() {
+function CelebrationSticker() {
   return (
     <>
-      <g transform="translate(67 65)">
-        <g className="character character-soft celebration-left">
-          <path className="body" d="M43 5c28 0 50 24 50 58 0 38-21 63-50 63S-7 101-7 63C-7 29 15 5 43 5z" />
-          <circle className="eye" cx="29" cy="48" r="4" />
-          <circle className="eye" cx="58" cy="48" r="4" />
-          <path className="happy-mouth" d="M36 62c5 7 12 7 17 0" />
-          <circle className="blush" cx="16" cy="58" r="8" />
-          <circle className="blush" cx="71" cy="58" r="8" />
-          <path className="hug-arm hug-arm-left" d="M72 80c18 8 23 22 12 34" />
-        </g>
+      <g className="sticker-float sticker-float-left">
+        <Heart x={96} y={49} size={20} />
+        <Heart x={136} y={35} size={31} />
+        <Heart x={190} y={51} size={17} />
       </g>
 
-      <g transform="translate(130 62)">
-        <g className="character character-warm celebration-right">
-          <path className="ear ear-left" d="M11 20c-11-5-18 7-12 17 8-1 13-6 12-17z" />
-          <path className="ear ear-right" d="M69 20c11-5 18 7 12 17-8-1-13-6-12-17z" />
-          <path
-            className="body"
-            d="M40 9c29 0 48 24 48 56 0 36-20 61-48 61S-8 101-8 65C-8 33 11 9 40 9z"
-          />
-          <circle className="eye" cx="25" cy="47" r="4" />
-          <circle className="eye" cx="55" cy="47" r="4" />
-          <path className="mouth" d="M35 61c4 4 6 4 10 0" />
-          <circle className="blush" cx="13" cy="57" r="7" />
-          <circle className="blush" cx="67" cy="57" r="7" />
-          <path className="hug-arm hug-arm-right" d="M3 79c-17 8-21 24-9 35" />
-        </g>
+      <g className="character-bob character-bob-left">
+        <ellipse className="white-character" cx="133" cy="132" rx="49" ry="58" />
+        <circle className="face-dot" cx="117" cy="124" r="4.5" />
+        <circle className="face-dot" cx="145" cy="124" r="4.5" />
+        <path className="happy-mouth" d="M123 139c7 8 17 8 24 0" />
+        <circle className="cheek" cx="100" cy="137" r="9" />
+        <circle className="cheek" cx="160" cy="137" r="9" />
+        <path className="white-arm-outline" d="M164 145c18 10 34 8 49-8" />
+        <path className="white-arm" d="M164 145c18 10 34 8 49-8" />
+      </g>
+
+      <g className="character-bob character-bob-right">
+        <circle className="bear-ear" cx="176" cy="86" r="15" />
+        <circle className="bear-ear" cx="220" cy="91" r="15" />
+        <path
+          className="bean-character"
+          d="M186 73c-31 6-49 33-45 68 5 39 31 61 63 56 33-6 51-34 47-72-4-37-31-58-65-52z"
+        />
+        <circle className="face-dot" cx="184" cy="124" r="4.5" />
+        <circle className="face-dot" cx="213" cy="124" r="4.5" />
+        <path className="cute-mouth" d="M194 139c4 4 8 4 12 0" />
+        <circle className="cheek cheek-left" cx="168" cy="135" r="9" />
+        <circle className="cheek cheek-right" cx="228" cy="137" r="9" />
+        <path className="bear-arm-outline" d="M155 154c16 15 34 16 50 3" />
+        <path className="bear-arm" d="M155 154c16 15 34 16 50 3" />
       </g>
     </>
+  );
+}
+
+type HeartProps = {
+  x: number;
+  y: number;
+  size: number;
+};
+
+function Heart({ x, y, size }: HeartProps) {
+  return (
+    <path
+      className="sticker-heart"
+      d={`M${x} ${y + size * 0.3}c${-size * 0.55}-${size * 0.62}-${size * 1.4}-${size * 0.25}-${size * 1.4} ${size * 0.54} 0 ${size * 0.98} ${size * 1.4} ${size * 1.7} ${size * 1.4} ${size * 1.7}s${size * 1.4}-${size * 0.72} ${size * 1.4}-${size * 1.7}c0-${size * 0.79}-${size * 0.85}-${size * 1.16}-${size * 1.4}-${size * 0.54}z`}
+    />
   );
 }
