@@ -1,34 +1,34 @@
 # Love Prank
 
-Một project React nhỏ để trêu người yêu: câu hỏi có hai lựa chọn `YES` và `NO`, nhưng nút `NO` sẽ né chuột hoặc né thao tác chạm.
+A small React prank project: a romantic question with `YES` and `NO` options, but the `NO` button runs away from the cursor and touch attempts.
 
-## Chạy local
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build production
+## Production Build
 
 ```bash
 npm run build
 ```
 
-Sau khi build, thư mục static nằm ở `dist`.
+After building, the static files are generated in `dist`.
 
 ## Deploy
 
-Project dùng Vite nên có thể deploy như static site:
+This project uses Vite and can be deployed as a static site:
 
 - Build command: `npm run build`
 - Output directory: `dist`
 
-Các lựa chọn phù hợp:
+Good free hosting options:
 
 - [Vercel](https://vercel.com/docs/accounts/plans)
 - [Netlify](https://www.netlify.com/pricing/)
 - [Cloudflare Pages](https://developers.cloudflare.com/pages/platform/limits/)
 - [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages)
 
-Tham khảo thêm hướng dẫn deploy static site của [Vite](https://vite.dev/guide/static-deploy.html).
+See the [Vite static deploy guide](https://vite.dev/guide/static-deploy.html) for more details.

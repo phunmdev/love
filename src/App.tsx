@@ -8,12 +8,12 @@ type ButtonPosition = {
 
 const noLabels = [
   "NO",
-  "Chắc chưa?",
-  "Nghĩ lại đi",
-  "Không được đâu",
-  "Bắt anh đi",
-  "Đố em bắt được",
-  "Lêu lêu",
+  "Are you sure?",
+  "Think again",
+  "Not this one",
+  "Catch me first",
+  "Too slow",
+  "Nope",
 ];
 
 function App() {
@@ -83,6 +83,12 @@ function App() {
     setMoveCount((count) => count + 1);
   };
 
+  const resetGame = () => {
+    setAccepted(false);
+    setMoveCount(0);
+    setNoPosition(null);
+  };
+
   const noButtonText = noLabels[Math.min(moveCount, noLabels.length - 1)];
 
   return (
@@ -97,15 +103,20 @@ function App() {
       <section className="proposal" aria-live="polite">
         {accepted ? (
           <div className="answer">
-            <p className="eyebrow">Chốt đơn</p>
-            <h1>Anh biết em sẽ chọn YES mà.</h1>
-            <p className="subtitle">Từ giờ không được đổi ý đâu nha.</p>
+            <p className="eyebrow">Deal sealed</p>
+            <h1>I knew you would choose YES.</h1>
+            <p className="subtitle">No take-backs from now on.</p>
+            <button className="reset-button" type="button" onClick={resetGame}>
+              Play again
+            </button>
           </div>
         ) : (
           <>
-            <p className="eyebrow">Có một câu hỏi nhỏ</p>
-            <h1>Làm người yêu anh nha?</h1>
-            <p className="subtitle">Chọn cẩn thận, nút kia hơi khó tính.</p>
+            <p className="eyebrow">One tiny question</p>
+            <h1>Do you love me?</h1>
+            <p className="subtitle">
+              Choose carefully. The other button is hard to catch.
+            </p>
 
             <div ref={arenaRef} className="button-arena">
               <button
